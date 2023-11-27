@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Elephant
+comment0.text=\n\ The\ Elephant,\ our\ hero.\n\ \n\ @author\ (Justin\ Ye)\ \n\ @version\ (Nov\ 21,2023)\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=\n\ Act\ -\ do\ whatever\ the\ Elephant\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+comment2.params=
+comment2.target=void\ eat()
+comment2.text=\n\ Eat\ the\ apple\ and\ spawn\ new\ apple\ if\ an\ apple\ is\ eaten\n
+numComments=3
