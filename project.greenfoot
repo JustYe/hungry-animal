@@ -1,6 +1,6 @@
 #Greenfoot project file
 class.Cupcake.image=muffin.png
-class.Elephant.image=Mario1.png
+class.Elephant.image=elephant\ idle.gif
 class.MyWorld.image=Reiner's\ Farm.jpeg
 dependency1.from=MyWorld
 dependency1.to=Label
