@@ -47,5 +47,8 @@ public class titleScreen extends World
         addObject(label,295,265);
         Label label2 = new Label("Press 's' to Start", 30);
         addObject(label2,299,328);
+        Label label3 = new Label("PS: it's cardio so stop pressing <space> ", 25);
+        addObject(label3,282,26);
+        label3.setLocation(330,34);
     }
 }
