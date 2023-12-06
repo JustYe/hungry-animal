@@ -123,19 +123,21 @@ public class Mario extends Actor
         {
             int initialY = getY();
             isJumping = true;
-
-            for(int i = 0; i < jumpHeight; i += jumpSpeed)
+    
+            int frames = jumpHeight / jumpSpeed;
+    
+            for(int i = 0; i < frames; i++)
             {
-                setLocation(getX(), initialY - i);
-                Greenfoot.delay(1);
+                setLocation(getX(), initialY - i * jumpSpeed);
+                Greenfoot.delay(1); // Wait for 1 act() cycle
             }
-
-            for(int i = 0; i < jumpHeight; i += jumpSpeed)
+    
+            for(int i = frames - 1; i >= 0; i--)
             {
-                setLocation(getX(), initialY - jumpHeight + i);
-                Greenfoot.delay(1);
+                setLocation(getX(), initialY - i * jumpSpeed);
+                Greenfoot.delay(1); // Wait for 1 act() cycle
             }
-
+    
             setLocation(getX(), initialY);
             isJumping = false;
         }

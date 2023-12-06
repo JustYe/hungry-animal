@@ -60,4 +60,35 @@ public class World1 extends World
         int y = 0;
         addObject(a,x,y);
     }
+    
+    public void checkTeleportMario()
+    {
+        Mario mario = (Mario) getObjects(Mario.class).get(0);
+
+        int worldWidth = getWidth();
+        int worldHeight = getHeight();
+
+        if (mario.getX() <= 0)
+        {
+            mario.setLocation(worldWidth - 1, mario.getY());
+        }
+        else if (mario.getX() >= worldWidth)
+        {
+            mario.setLocation(1, mario.getY());
+        }
+        
+        if (mario.getY() <= 0)
+        {
+            mario.setLocation(mario.getX(), worldHeight - 1);
+        }
+        else if (mario.getY() >= worldHeight)
+        {
+            mario.setLocation(mario.getX(), 1);
+        }
+    }
+    
+    public void act()
+    {
+        checkTeleportMario();
+    }
 }
