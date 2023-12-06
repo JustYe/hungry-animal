@@ -14,9 +14,8 @@ public class Mario extends Actor
     
     String facing = "right";
     SimpleTimer animationTimer = new SimpleTimer();
-    
-    private static int jumpower = 4;
-    private int velocity;
+
+    int velocity;
     /**
      * Constructor - the code that gets run one time when an object is created.
      */
@@ -82,6 +81,7 @@ public class Mario extends Actor
         eat();
         animateMario();
         checkkeys();
+        jump();
     }
     
     public void checkkeys()
@@ -107,10 +107,37 @@ public class Mario extends Actor
         if(isTouching(Cupcake.class))
         {
             removeTouching(Cupcake.class);
-            MyWorld world = (MyWorld) getWorld();
+            World1 world = (World1) getWorld();
             world.createCupcake();
             world.increaseScore();
             marioCoin.play();
+        }
+    }
+    
+    boolean isJumping = false;
+    int jumpHeight = 50; 
+    int jumpSpeed = 5;
+    public void jump()
+    {
+        if(Greenfoot.isKeyDown("space") && !isJumping)
+        {
+            int initialY = getY();
+            isJumping = true;
+
+            for(int i = 0; i < jumpHeight; i += jumpSpeed)
+            {
+                setLocation(getX(), initialY - i);
+                Greenfoot.delay(1);
+            }
+
+            for(int i = 0; i < jumpHeight; i += jumpSpeed)
+            {
+                setLocation(getX(), initialY - jumpHeight + i);
+                Greenfoot.delay(1);
+            }
+
+            setLocation(getX(), initialY);
+            isJumping = false;
         }
     }
 }

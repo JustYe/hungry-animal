@@ -18,7 +18,7 @@ public class Cupcake extends Actor
         int y = getY() + speed;
         setLocation(x,y);
         
-        MyWorld world = (MyWorld)getWorld();
+        World1 world = (World1)getWorld();
         if(getY() >= world.getHeight())
         {
             world.gameOver();

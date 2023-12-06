@@ -30,7 +30,7 @@ public class titleScreen extends World
     {
         if(Greenfoot.isKeyDown("s"))
         {
-            MyWorld gameWorld = new MyWorld();
+            World1 gameWorld = new World1();
             Greenfoot.setWorld(gameWorld);
         }
     }
