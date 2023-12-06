@@ -81,7 +81,6 @@ public class Mario extends Actor
         eat();
         animateMario();
         checkkeys();
-        jump();
     }
     
     public void checkkeys()
@@ -111,35 +110,6 @@ public class Mario extends Actor
             world.createCupcake();
             world.increaseScore();
             marioCoin.play();
-        }
-    }
-    
-    boolean isJumping = false;
-    int jumpHeight = 50; 
-    int jumpSpeed = 5;
-    public void jump()
-    {
-        if(Greenfoot.isKeyDown("space") && !isJumping)
-        {
-            int initialY = getY();
-            isJumping = true;
-    
-            int frames = jumpHeight / jumpSpeed;
-    
-            for(int i = 0; i < frames; i++)
-            {
-                setLocation(getX(), initialY - i * jumpSpeed);
-                Greenfoot.delay(1); // Wait for 1 act() cycle
-            }
-    
-            for(int i = frames - 1; i >= 0; i--)
-            {
-                setLocation(getX(), initialY - i * jumpSpeed);
-                Greenfoot.delay(1); // Wait for 1 act() cycle
-            }
-    
-            setLocation(getX(), initialY);
-            isJumping = false;
         }
     }
 }
