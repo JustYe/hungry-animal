@@ -15,8 +15,7 @@ public class Mario extends Actor
     String facing = "right";
     SimpleTimer animationTimer = new SimpleTimer();
     
-    private static final int JUMP_STRENGTH = 4;
-    private static final int GRAVITY = 1;
+    private static int jumpower = 4;
     private int velocity;
     /**
      * Constructor - the code that gets run one time when an object is created.
@@ -44,7 +43,6 @@ public class Mario extends Actor
      * Animate mario
      */
     int imageIndex = 0;
-    
     public void animateMario()
     {
         if(animationTimer.millisElapsed() < 180)
@@ -90,12 +88,12 @@ public class Mario extends Actor
     {
         if(Greenfoot.isKeyDown("a"))
         {
-            move(-3);
+            move(-6);
             facing = "left";
         }
         else if(Greenfoot.isKeyDown("d"))
         {
-            move(3);
+            move(6);
             facing = "right";
         }
         else
